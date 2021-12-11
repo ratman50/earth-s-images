@@ -56,10 +56,11 @@ fetch(`https://api.nasa.gov/EPIC/api/natural?api_key=${KEY}`)
       sli[n - 1].style.display = "";
       for (let k = 0; k < namePict.length; k++) {
         const element = namePict[k];
-        element.href = sli[slideIndex - 1].firstChild.src;
+        element.href = sli[n - 1].firstChild.src;
       }
-      caption.firstElementChild.innerText = data[slideIndex - 1].caption;
-      namePict[0].innerText = data[slideIndex].image;
+      caption.firstElementChild.innerText = data[n - 1].caption;
+      console.log(n - 1);
+      namePict[0].innerText = data[n - 1].image;
     }
     direction[0].addEventListener("click", () => showSlide(--slideIndex));
     direction[1].addEventListener("click", () => showSlide(++slideIndex));
