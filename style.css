@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;1,100;1,200;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  list-style: none;
+  transition: all 0.5s linear;
+}
+hr {
+  background-color: white;
+  height: 1px;
+}
+
+body {
+  background-color: #000;
+  color: white;
+}
+
+main .inner {
+  padding: 0 2em;
+}
+main .inner .header {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: linear-gradient(
+    16deg,
+    rgba(14, 14, 14, 1) 53%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+main .inner .header .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .inner .header .logo img {
+  width: 130px;
+}
+main .inner .header .navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .inner .header .navbar .navbar-item {
+  position: relative;
+  margin: 0 1.6em;
+}
+main .inner .header .navbar .navbar-item h3 a {
+  color: white;
+}
+main .inner .header .navbar .navbar-item h3:hover + .dropdown-item {
+  /* display:contents; */
+  visibility: visible;
+  /* clip-path: polygon(0 0,100% 100%,0 100%,100% 100%); */
+  /* display: block; */
+}
+
+main .inner .header .navbar .navbar-item .dropdown-item {
+  position: absolute;
+  top: 120%;
+  width: 180px;
+  background-color: white;
+  color: black;
+  /* display: none; */
+  visibility: hidden;
+  /* clip-path: polygon(0 0,100% 0,0 0,100% 0); */
+}
+main .inner .header .navbar .navbar-item .dropdown-item:hover {
+  visibility: visible;
+}
+main .inner .header .navbar .navbar-item .dropdown-item i {
+  position: absolute;
+  bottom: 85%;
+  color: white;
+  left: 10%;
+  font-size: 1.8em;
+}
+main .inner .header .navbar .navbar-item .dropdown-item li {
+  padding: 9px;
+}
+
+main .inner .header .navbar .navbar-item .dropdown-item li:hover {
+  background-color: darkgrey;
+}
+main .inner .header .navbar .navbar-item .dropdown-item li a {
+  color: black;
+}
+
+main .inner .header .button-menu {
+  position: absolute;
+  right: 30px;
+  display: none;
+}
+main .inner .header .button-menu > i {
+  font-size: 2em;
+  padding: 0.3em;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 0.5em auto 0;
+  cursor: pointer;
+}
+
+main .inner .contents {
+  display: flex;
+}
+main .inner .contents .coord {
+  margin-top: 1.5em;
+  flex-basis: 60%;
+  border: 2px solid #666666;
+  border-radius: 12px;
+}
+main .inner .contents .coord .image-information h3 {
+  background-color: #919191;
+  color: #000;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 0.4em;
+}
+main .inner .contents .coord .image-information .content {
+  padding: 0.4em;
+}
+main .inner .contents .download {
+  display: flex;
+  justify-content: space-between;
+}
+main .inner .contents .download a {
+  color: chartreuse;
+}
+main .inner .contents .coord .image-information .content p {
+  color: darkgrey;
+  padding: 0.5em 0;
+}
+main .inner .contents .coord .image-information .content p > span {
+  color: white;
+}
+.contents .picture {
+  position: relative;
+}
+.contents .picture i {
+  position: absolute;
+  cursor: pointer;
+  background-color: darkgrey;
+  color: #0e0e0e;
+  font-size: 2em;
+  padding: 7px;
+  border-radius: 60%;
+  top: 50%;
+}
+.contents .picture i.fa-caret-left {
+  left: 14px;
+}
+.contents .picture i.fa-caret-right {
+  /* left: 100%; */
+  right: 14px;
+}
+.contents .picture .slideshow-container .slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contents .picture .slideshow-container .slider img {
+  width: 80%;
+}
+main .inner .footer {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(14, 14, 14);
+  background: linear-gradient(
+    180deg,
+    rgba(14, 14, 14, 1) 78%,
+    rgba(171, 167, 167, 1) 100%
+  );
+}
+main .inner .footer .logo {
+  margin-bottom: 1.4em;
+}
+main .inner .footer .logo a > img {
+  width: 150px;
+}
+main .inner .footer .introduce {
+  flex-basis: 20%;
+  text-align: justify;
+}
+main .inner .footer .contact {
+  flex-basis: 10%;
+  text-align: right;
+}
