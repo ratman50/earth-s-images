@@ -114,10 +114,11 @@ main .inner .contents {
 }
 main .inner .contents .coord {
   margin-top: 1.5em;
-  flex-basis: 60%;
+  flex-basis: 70%;
   border: 2px solid #666666;
   border-radius: 12px;
 }
+
 main .inner .contents .coord .image-information h3 {
   background-color: #919191;
   color: #000;
@@ -126,7 +127,7 @@ main .inner .contents .coord .image-information h3 {
   padding: 0.4em;
 }
 main .inner .contents .coord .image-information .content {
-  padding: 0.4em;
+  padding: 2em 1em 0;
 }
 main .inner .contents .download {
   display: flex;
@@ -169,6 +170,14 @@ main .inner .contents .coord .image-information .content p > span {
 }
 .contents .picture .slideshow-container .slider img {
   width: 80%;
+}
+.grn {
+  color: chartreuse !important;
+  cursor: pointer !important;
+}
+.control-image {
+  display: flex;
+  justify-content: space-between;
 }
 main .inner .footer {
   display: flex;
