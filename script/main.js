@@ -9,7 +9,11 @@ const caption = document.querySelector(".caption");
 let direction = document.querySelectorAll(".contents .picture i");
 let frag = new DocumentFragment();
 const containerSlider = document.querySelector(".slideshow-container");
-
+const postDscvr = document.querySelector(".Dist-to-earth span");
+const posSun = document.querySelector(".Dist-to-sun span");
+const posMoon = document.querySelector(".Dist-to-moon span");
+const showing = document.querySelector(".partOne .show");
+const imageDate = document.querySelector(".partTwo .date");
 fetch(`https://api.nasa.gov/EPIC/api/natural?api_key=${KEY}`)
   .then((reponse) => {
     return reponse.json();
@@ -61,6 +65,33 @@ fetch(`https://api.nasa.gov/EPIC/api/natural?api_key=${KEY}`)
       caption.firstElementChild.innerText = data[n - 1].caption;
       console.log(n - 1);
       namePict[0].innerText = data[n - 1].image;
+      postDscvr.innerText =
+        " (" +
+        Math.trunc(data[n - 1].dscovr_j2000_position.x) +
+        " ; " +
+        Math.trunc(data[n - 1].dscovr_j2000_position.y) +
+        " ; " +
+        Math.trunc(data[n - 1].dscovr_j2000_position.z) +
+        ")";
+      posSun.innerText =
+        " (" +
+        Math.trunc(data[n - 1].sun_j2000_position.x) +
+        " ; " +
+        Math.trunc(data[n - 1].sun_j2000_position.y) +
+        " ; " +
+        Math.trunc(data[n - 1].sun_j2000_position.z) +
+        ")";
+      posMoon.innerText =
+        " (" +
+        Math.trunc(data[n - 1].lunar_j2000_position.x) +
+        " ; " +
+        Math.trunc(data[n - 1].lunar_j2000_position.y) +
+        " ; " +
+        Math.trunc(data[n - 1].lunar_j2000_position.z) +
+        ")";
+      showing.children[0].innerText = n;
+      showing.children[1].innerText = data.length;
+      imageDate.innerText = " " + data[n].date.slice(0, 10);
     }
     direction[0].addEventListener("click", () => showSlide(--slideIndex));
     direction[1].addEventListener("click", () => showSlide(++slideIndex));
