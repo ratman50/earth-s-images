@@ -14,6 +14,7 @@ const posSun = document.querySelector(".Dist-to-sun span");
 const posMoon = document.querySelector(".Dist-to-moon span");
 const showing = document.querySelector(".partOne .show");
 const imageDate = document.querySelector(".partTwo .date");
+const play = document.querySelector(".fa-play");
 fetch(`https://api.nasa.gov/EPIC/api/natural?api_key=${KEY}`)
   .then((reponse) => {
     return reponse.json();
@@ -95,6 +96,30 @@ fetch(`https://api.nasa.gov/EPIC/api/natural?api_key=${KEY}`)
     }
     direction[0].addEventListener("click", () => showSlide(--slideIndex));
     direction[1].addEventListener("click", () => showSlide(++slideIndex));
+
+    play.addEventListener("click", () => {
+      play.classList.toggle("fa-stop");
+      let timeId = setInterval(function anim() {
+        if (!play.className.includes("fa-stop")) {
+          clearInterval(timeId);
+          play.innerText = "Play";
+        } else {
+          namePict[0].textContent = "";
+          play.innerText = "Pause";
+          let sli = document.querySelectorAll(".slider.fade");
+
+          if (slideIndex == data.length) {
+            slideIndex = 1;
+          }
+          for (let index = 0; index < sli.length; index++) {
+            const element = sli[index];
+            element.style.display = "none";
+          }
+          sli[slideIndex - 1].style.display = "";
+          slideIndex++;
+        }
+      }, 1300);
+    });
     // date = new Date(data[0].date);
     // pict = data[0].image;
     // console.log(date.getDate());
