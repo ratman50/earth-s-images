@@ -179,6 +179,18 @@ main .inner .contents .coord .image-information .content p > span {
   display: flex;
   justify-content: space-between;
 }
+.fade {
+  /* opacity:0.4; */
+  animation: op 0.3s linear;
+}
+@keyframes op {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
 main .inner .footer {
   display: flex;
   justify-content: space-between;
